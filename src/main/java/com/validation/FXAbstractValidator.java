@@ -1,0 +1,44 @@
+package com.validation;
+
+import com.validation.exceptions.ValidationException;
+import javafx.scene.control.Control;
+
+import java.lang.annotation.Annotation;
+
+public abstract class FXAbstractValidator<T extends Control, A extends Annotation> {
+    protected T control;
+
+    protected A annotation;
+
+    public FXAbstractValidator() {
+        // nothing to do
+    }
+
+    public FXAbstractValidator(T control, A annotation) {
+        this.control = control;
+        this.annotation = annotation;
+    }
+
+    public abstract void validate(T control, A annotation) throws ValidationException;
+
+
+    public void validate() throws ValidationException {
+        this.validate(this.control, this.annotation);
+    }
+
+    public T getControl() {
+        return control;
+    }
+
+    public void setControl(T control) {
+        this.control = control;
+    }
+
+    public A getAnnotation() {
+        return annotation;
+    }
+
+    public void setAnnotation(A annotation) {
+        this.annotation = annotation;
+    }
+}
