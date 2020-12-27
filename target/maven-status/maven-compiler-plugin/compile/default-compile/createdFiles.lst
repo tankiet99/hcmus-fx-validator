@@ -1,7 +1,9 @@
 com\validation\annotations\FXRequired.class
+com\validation\LabelErrorHandler.class
 com\validation\FXAbstractValidator.class
 com\validation\exceptions\ValidationException.class
 org\example\FormSubmitController.class
+com\validation\FXValidationHandler.class
 module-info.class
 org\example\SecondaryController.class
 com\validation\RequiredValidator.class
