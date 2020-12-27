@@ -1,6 +1,8 @@
 package com.validation;
 
 import com.validation.exceptions.ValidationException;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.scene.control.Control;
 
 import java.lang.annotation.Annotation;
@@ -9,6 +11,8 @@ public abstract class FXAbstractValidator<T extends Control, A extends Annotatio
     protected T control;
 
     protected A annotation;
+
+    protected final BooleanProperty isValid = new SimpleBooleanProperty(false);
 
     public FXAbstractValidator() {
         // nothing to do
@@ -24,6 +28,10 @@ public abstract class FXAbstractValidator<T extends Control, A extends Annotatio
 
     public void validate() throws ValidationException {
         this.validate(this.control, this.annotation);
+    }
+
+    public BooleanProperty isValidProperty() {
+        return isValid;
     }
 
     public T getControl() {
