@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class LabelErrorHandler {
     private static final String VALIDATION_MSG = "validation-message";
-    private static Map<Node, List<Label>> nodeListMap = new HashMap<>();
+    private static final Map<Node, List<Label>> nodeListMap = new HashMap<>();
 
     public static ArrayList<Node> getAllNodes(Parent root) {
         ArrayList<Node> nodes = new ArrayList<Node>();
@@ -58,7 +58,20 @@ public class LabelErrorHandler {
         if (list == null) {
             initialize(node);
             list = nodeListMap.get(node);
+            System.out.println(list);
         }
         return list;
+    }
+
+    public static void displayErrorLabel(Node node, String idNode, Boolean isError, String msg) {
+        System.out.println(idNode + "   " + isError + "  " + msg);
+        List<Label> list = getLabelForNode(node);
+        for (Label label:
+             list) {
+            if (label.getLabelFor().getId().equals(idNode)) {
+                label.setText(msg);
+                label.setVisible(isError);
+            }
+        }
     }
 }

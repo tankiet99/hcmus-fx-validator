@@ -1,19 +1,89 @@
 package com.validation;
 
+import com.validation.annotations.FXRequired;
+import com.validation.annotations.FXString;
+import com.validation.exceptions.ValidationException;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TextInputControl;
 
+import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
 
 public class FXValidationHandler {
-    public static void handle(Class controller, Node root) {
+    private Class controller;
+
+    private Node root;
+
+    private Map<String, Map<Annotation, String>> mapMessage;
+
+    public FXValidationHandler() {
+    }
+
+    public FXValidationHandler(Class controller, Node root) {
+        this.controller = controller;
+        this.root = root;
+        this.mapMessage = new HashMap<>();
+    }
+
+    public void handle() {
         Class<?> aClazz = controller;
         Field[] fields = aClazz.getDeclaredFields();
         for(Field field: fields){
             Annotation[] annotations = (Annotation[]) field.getAnnotations();
+            String idNode = field.getName();
             for (Annotation annotation: annotations){
-                System.out.println(annotation.annotationType().getName());
+                getValidator(annotation, idNode);
             }
+        }
+    }
+
+    private void getValidator(Annotation annotation, String idNode) {
+        if (annotation instanceof FXRequired) {
+            TextField textField = (TextField) root.lookup("#" + idNode);
+            RequiredValidator requiredValidator = new RequiredValidator();
+            doValidate(requiredValidator, textField, annotation, idNode, ((FXRequired) annotation).message());
+        } else if (annotation instanceof FXString) {
+            TextField textField = (TextField) root.lookup("#" + idNode);
+            StringValidator stringValidator = new StringValidator();
+            doValidate(stringValidator, textField, annotation, idNode, ((FXString) annotation).message());
+        }
+    }
+
+    private void doValidate(FXAbstractValidator validator, TextField textField, Annotation annotation, String idNode, String msg) {
+        try {
+            validator.validate(textField, annotation);
+            if (mapMessage.get(idNode) != null) {
+                mapMessage.get(idNode).remove(annotation);
+            }
+            String msgErr = "";
+            if (mapMessage.get(idNode) != null) {
+                for (Map.Entry el: mapMessage.get(idNode).entrySet()) {
+                    msgErr = msgErr.concat(((String) el.getValue()));
+                }
+            }
+            if (!msgErr.equals("")) {
+                LabelErrorHandler.displayErrorLabel(root, idNode, true, msgErr);
+            } else {
+                LabelErrorHandler.displayErrorLabel(root, idNode, false, null);
+            }
+        } catch (ValidationException e) {
+            if (mapMessage.get(idNode) == null) {
+                mapMessage.put(idNode, new HashMap<>());
+                mapMessage.get(idNode).put(annotation, msg);
+            } else {
+                mapMessage.get(idNode).put(annotation, msg);
+            }
+            String msgErr = "";
+            for (Map.Entry el: mapMessage.get(idNode).entrySet()) {
+                msgErr = msgErr.concat(((String) el.getValue()));
+            }
+            LabelErrorHandler.displayErrorLabel(root, idNode, true, msgErr);
         }
     }
 }

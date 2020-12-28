@@ -6,18 +6,28 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 import com.validation.FXAbstractValidator;
+import com.validation.FXValidationHandler;
 import com.validation.RequiredValidator;
 import com.validation.StringValidator;
 import com.validation.annotations.FXRequired;
 import com.validation.annotations.FXString;
 import com.validation.exceptions.ValidationException;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Control;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 
 public class FormSubmitController {
+    @FXML
+    AnchorPane anchorPane;
+
     @FXML
     public Button primaryButton;
 
@@ -30,17 +40,20 @@ public class FormSubmitController {
 
     @FXML
     @FXRequired(message = "field is required!")
-    @FXString(max = 10, min = 2, message = "độ dài filed không hợp lệ")
+    @FXString(max = 10, min = 5, message = "độ dài filed không hợp lệ")
     TextField tf3;
 
     @FXML
     TextField tf4;
 
     @FXML
-    private void submit() throws IOException, NoSuchFieldException, ValidationException {
-        App.setRoot("secondary");
+    Label lb1;
 
-        Class<?> aClazz = FormSubmitController.class;
+    @FXML
+    private void submit() throws IOException{
+//        App.setRoot("secondary");
+        new FXValidationHandler(FormSubmitController.class, anchorPane).handle();
+      /*  Class<?> aClazz = FormSubmitController.class;
 
         //lấy cái Field khai báo là tf3 ra
         Field field3 = aClazz.getDeclaredField("tf3");
@@ -58,6 +71,7 @@ public class FormSubmitController {
 
         // Chúng ta cũng có thể sử dụng
         // StringValidator stringValidator = new StringValidator(tf3, (FXString) an);
-        // stringValidator.validate();
+        // stringValidator.validate();*/
+//        new FXValidationHandler().handle(FormSubmitController.class, anchorPane);
     }
 }

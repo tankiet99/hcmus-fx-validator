@@ -18,10 +18,17 @@ public class StringValidator extends FXAbstractValidator<TextInputControl, FXStr
     @Override
     public void validate(TextInputControl control, FXString annotation) throws ValidationException {
         int length = control.getText().toString().length();
-        if(length<annotation.min())
-            System.out.println(annotation.message());
-        if (length>annotation.max())
-            System.out.println(annotation.message());
-        return;
+        boolean valid = true;
+        if(length<annotation.min()) {
+            valid = false;
+            this.isValid.set(valid);
+            throw new ValidationException(annotation.message());
+        }
+
+        if (length>annotation.max()) {
+            valid = false;
+            this.isValid.set(valid);
+            throw new ValidationException(annotation.message());
+        }
     }
 }

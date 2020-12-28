@@ -38,22 +38,22 @@
                      <fx:reference source="tf4" />
                   </labelFor>
                </Label>
-               <Label layoutX="135.0" layoutY="60.0" styleClass="validation-message" text="validation message for tf1">
+               <Label visible="false" fx:id="lb1" layoutX="135.0" layoutY="60.0" styleClass="validation-message" text="validation message for tf1">
                   <labelFor>
                      <fx:reference source="tf1" />
                   </labelFor>
                </Label>
-               <Label layoutX="135.0" layoutY="110.0" styleClass="validation-message" text="validation message for tf2">
+               <Label visible="false" layoutX="135.0" layoutY="110.0" styleClass="validation-message" text="validation message for tf2">
                   <labelFor>
                      <fx:reference source="tf2" />
                   </labelFor>
                </Label>
-               <Label layoutX="135.0" layoutY="160.0" styleClass="validation-message" text="validation message for tf3">
+               <Label visible="false" layoutX="135.0" layoutY="160.0" styleClass="validation-message" text="validation message for tf3">
                   <labelFor>
                      <fx:reference source="tf3" />
                   </labelFor>
                </Label>
-               <Label layoutX="135.0" layoutY="210.0" styleClass="aefx-validation-message" text="validation message for tf14">
+               <Label visible="false" layoutX="135.0" layoutY="210.0" styleClass="aefx-validation-message" text="validation message for tf14">
                   <labelFor>
                      <fx:reference source="tf4" />
                   </labelFor>
