@@ -1,6 +1,7 @@
 com\validation\annotations\FXRequired.class
 com\validation\FXAbstractValidator.class
 com\validation\exceptions\ValidationException.class
+com\validation\ValidatorFactory.class
 com\validation\StringValidator.class
 org\example\FormSubmitController.class
 com\validation\annotations\FXString.class
