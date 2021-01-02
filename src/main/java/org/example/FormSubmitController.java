@@ -53,6 +53,8 @@ public class FormSubmitController {
     private void submit() throws IOException{
 //        App.setRoot("secondary");
         new FXValidationHandler(FormSubmitController.class, anchorPane).handle();
+//        Validator.valid("STRING", "dkfd", 2, 3, tf1);
+
       /*  Class<?> aClazz = FormSubmitController.class;
 
         //lấy cái Field khai báo là tf3 ra

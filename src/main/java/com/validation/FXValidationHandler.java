@@ -44,6 +44,10 @@ public class FXValidationHandler {
         }
     }
 
+    public void handle(String validatorType, TextField tf, String msg) {
+//        doValidate(new ValidatorFactory().getValidator(validatorType), tf, tf.getId(), msg);
+    }
+
     private void getValidator(Annotation annotation, String idNode) {
         if (annotation instanceof FXRequired) {
             TextField textField = (TextField) root.lookup("#" + idNode);
@@ -65,13 +69,13 @@ public class FXValidationHandler {
             String msgErr = "";
             if (mapMessage.get(idNode) != null) {
                 for (Map.Entry el: mapMessage.get(idNode).entrySet()) {
-                    msgErr = msgErr.concat(((String) el.getValue()));
+                    msgErr = msgErr.concat(((String) el.getValue()) + " | ");
                 }
             }
             if (!msgErr.equals("")) {
-                LabelErrorHandler.displayErrorLabel(root, idNode, true, msgErr);
+                LabelErrorHandler.getInstance().displayErrorLabel(root, idNode, true, msgErr);
             } else {
-                LabelErrorHandler.displayErrorLabel(root, idNode, false, null);
+                LabelErrorHandler.getInstance().displayErrorLabel(root, idNode, false, null);
             }
         } catch (ValidationException e) {
             if (mapMessage.get(idNode) == null) {
@@ -82,9 +86,9 @@ public class FXValidationHandler {
             }
             String msgErr = "";
             for (Map.Entry el: mapMessage.get(idNode).entrySet()) {
-                msgErr = msgErr.concat(((String) el.getValue()));
+                msgErr = msgErr.concat(((String) el.getValue()) + " | ");
             }
-            LabelErrorHandler.displayErrorLabel(root, idNode, true, msgErr);
+            LabelErrorHandler.getInstance().displayErrorLabel(root, idNode, true, msgErr);
         }
     }
 }
