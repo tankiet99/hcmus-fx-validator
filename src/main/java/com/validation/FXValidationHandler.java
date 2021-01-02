@@ -2,6 +2,7 @@ package com.validation;
 
 import com.validation.annotations.FXRequired;
 import com.validation.annotations.FXString;
+import com.validation.annotations.FXValidation;
 import com.validation.exceptions.ValidationException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;

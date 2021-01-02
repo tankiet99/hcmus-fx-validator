@@ -23,27 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="531440db-bdb2-4e2e-865a-70d63db16179" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/validation/annotations/FXValidation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/validation/FXValidationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/validation/FXValidationHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/validation/LabelErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/validation/LabelErrorHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/validation/StringValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/validation/StringValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FormSubmitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FormSubmitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/primary.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/FXAbstractValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/FXAbstractValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/FXValidationHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/FXValidationHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/LabelErrorHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/LabelErrorHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/RequiredValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/RequiredValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/StringValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/StringValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/annotations/FXRequired.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/annotations/FXRequired.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/annotations/FXString.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/annotations/FXString.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/exceptions/FXValidatorException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/exceptions/FXValidatorException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/exceptions/ValidationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/exceptions/ValidationException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/FormSubmitController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/FormSubmitController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/SecondaryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/SecondaryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/primary.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
@@ -57,6 +40,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="AnnotationType" />
       </list>
     </option>
   </component>
@@ -77,16 +61,24 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.App" />
+      <module name="hcmus-fx-validator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -116,6 +108,11 @@
         <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="javafx:run" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -131,6 +128,11 @@
       <workItem from="1608978364339" duration="909000" />
       <workItem from="1608989280019" duration="6651000" />
       <workItem from="1609045509432" duration="6604000" />
+      <workItem from="1609242641495" duration="2932000" />
+      <workItem from="1609383052263" duration="830000" />
+      <workItem from="1609385109807" duration="993000" />
+      <workItem from="1609393109250" duration="2830000" />
+      <workItem from="1609557018618" duration="23000" />
     </task>
     <servers />
   </component>
@@ -151,47 +153,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="574" y="133" key="#com.intellij.ide.util.MemberChooser" timestamp="1609087845623">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="574" y="133" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1609087845623" />
-    <state x="551" y="312" width="433" height="216" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1609076515615">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="551" y="312" width="433" height="216" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.834@0.0.1536.834" timestamp="1609076515615" />
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1609124158160">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1609124158160" />
-    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1609124158159">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1609124158159" />
-    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1609124158159">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1609124158159" />
-    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1609124158160">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1609124158160" />
-    <state x="147" y="66" key="MergeDialog" timestamp="1609063302919">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="147" y="66" key="MergeDialog/0.0.1536.834@0.0.1536.834" timestamp="1609063302919" />
-    <state x="407" y="179" key="MultipleFileMergeDialog" timestamp="1609063302928">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="407" y="179" key="MultipleFileMergeDialog/0.0.1536.834@0.0.1536.834" timestamp="1609063302928" />
-    <state x="461" y="176" key="Vcs.Multiple.Commit.Info.Dialog.Key" timestamp="1609063111176">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="461" y="176" key="Vcs.Multiple.Commit.Info.Dialog.Key/0.0.1536.834@0.0.1536.834" timestamp="1609063111176" />
-    <state x="425" y="189" key="run.anything.popup" timestamp="1609122724540">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1609122724540" />
   </component>
 </project>
