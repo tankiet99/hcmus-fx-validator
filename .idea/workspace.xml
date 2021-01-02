@@ -23,13 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="531440db-bdb2-4e2e-865a-70d63db16179" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/validation/ValidatorFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/validation/DialogErrorHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/validation/FXValidationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/validation/FXValidationHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/validation/LabelErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/validation/LabelErrorHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FormSubmitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FormSubmitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/FXValidationHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/FXValidationHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/LabelErrorHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/LabelErrorHandler.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,22 +141,22 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="551" y="312" width="433" height="216" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.834@0.0.1536.834" timestamp="1609076515615" />
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1609249304701">
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1609587071280">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1609249304701" />
-    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1609249304701">
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1609587071280" />
+    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1609587071279">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1609249304701" />
-    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1609249304701">
+    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1609587071279" />
+    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1609587071279">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1609249304701" />
-    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1609249304701">
+    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1609587071279" />
+    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1609587071279">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1609249304701" />
+    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1609587071279" />
     <state x="147" y="66" key="MergeDialog" timestamp="1609063302919">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

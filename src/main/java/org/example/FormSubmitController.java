@@ -4,11 +4,10 @@ import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-import com.validation.FXAbstractValidator;
-import com.validation.FXValidationHandler;
-import com.validation.RequiredValidator;
-import com.validation.StringValidator;
+import com.validation.*;
 import com.validation.annotations.FXRequired;
 import com.validation.annotations.FXString;
 import com.validation.exceptions.ValidationException;
@@ -52,8 +51,9 @@ public class FormSubmitController {
     @FXML
     private void submit() throws IOException{
 //        App.setRoot("secondary");
-        new FXValidationHandler(FormSubmitController.class, anchorPane).handle();
+//        new FXValidationHandler(FormSubmitController.class, anchorPane).handle();
 //        Validator.valid("STRING", "dkfd", 2, 3, tf1);
+        new DialogErrorHandler().display(new ArrayList<String>(Arrays.asList("Độ dài không hợp lệ", "Email không phù hợp")));
 
       /*  Class<?> aClazz = FormSubmitController.class;
 
