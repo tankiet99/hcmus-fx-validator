@@ -51,7 +51,7 @@ public class FormSubmitController {
     @FXML
     private void submit() throws IOException{
 //        App.setRoot("secondary");
-//        new FXValidationHandler(FormSubmitController.class, anchorPane).handle();
+        new FXValidationHandler(FormSubmitController.class, anchorPane).handle();
 //        Validator.valid("STRING", "dkfd", 2, 3, tf1);
         new DialogErrorHandler().display(new ArrayList<String>(Arrays.asList("Độ dài không hợp lệ", "Email không phù hợp")));
 

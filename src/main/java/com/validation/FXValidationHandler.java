@@ -2,6 +2,7 @@ package com.validation;
 
 import com.validation.annotations.FXRequired;
 import com.validation.annotations.FXString;
+import com.validation.annotations.FXValidation;
 import com.validation.exceptions.ValidationException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -21,6 +22,8 @@ public class FXValidationHandler {
     private Node root;
 
     private Map<String, Map<Annotation, String>> mapMessage;
+
+    private String validatorType;
 
     public FXValidationHandler() {
     }
@@ -48,6 +51,7 @@ public class FXValidationHandler {
     }
 
     private void getValidator(Annotation annotation, String idNode) {
+
         if (annotation instanceof FXRequired) {
             TextField textField = (TextField) root.lookup("#" + idNode);
             RequiredValidator requiredValidator = new RequiredValidator();
@@ -56,6 +60,8 @@ public class FXValidationHandler {
             TextField textField = (TextField) root.lookup("#" + idNode);
             StringValidator stringValidator = new StringValidator();
             doValidate(stringValidator, textField, annotation, idNode, ((FXString) annotation).message());
+        } else if (annotation instanceof FXValidation) {
+            Class<?> newValidator = ((FXValidation) annotation).validation();
         }
     }
 
