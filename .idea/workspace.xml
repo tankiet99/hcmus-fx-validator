@@ -23,9 +23,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="531440db-bdb2-4e2e-865a-70d63db16179" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/validation/DialogErrorHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/validation/CustomValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/validation/NumberValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/validation/RegexValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/validation/annotations/FXNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/validation/annotations/FXRegex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/validation/CustomValidator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/validation/NumberValidator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/validation/RegexValidator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/validation/annotations/FXNumber.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/validation/annotations/FXRegex.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/validation/handler/FXValidationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/validation/handler/FXValidationHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FormSubmitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FormSubmitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/primary.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/DialogErrorHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/DialogErrorHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/FXAbstractValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/FXAbstractValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/FXValidationHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/FXValidationHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/LabelErrorHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/LabelErrorHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/RequiredValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/RequiredValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/StringValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/StringValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/ValidatorFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/ValidatorFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/annotations/FXRequired.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/annotations/FXRequired.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/annotations/FXString.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/annotations/FXString.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/annotations/FXValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/annotations/FXValidation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/exceptions/FXValidatorException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/exceptions/FXValidatorException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/exceptions/ValidationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/exceptions/ValidationException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/FormSubmitController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/FormSubmitController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/SecondaryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/SecondaryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/primary.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,13 +90,15 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -111,6 +143,7 @@
       <workItem from="1608978364339" duration="909000" />
       <workItem from="1608989280019" duration="6651000" />
       <workItem from="1609045509432" duration="6604000" />
+      <workItem from="1609921835238" duration="65000" />
     </task>
     <servers />
   </component>
@@ -141,7 +174,6 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="551" y="312" width="433" height="216" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.834@0.0.1536.834" timestamp="1609076515615" />
-<<<<<<< HEAD
     <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1609587071280">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -158,7 +190,7 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1609587071279" />
-=======
+    =======
     <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1609124158160">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -175,7 +207,7 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1609124158160" />
->>>>>>> 09eaa93faf5d6a8a079ada80db01e31de8f16894
+    &gt;&gt;&gt;&gt;&gt;&gt;&gt; 09eaa93faf5d6a8a079ada80db01e31de8f16894
     <state x="147" y="66" key="MergeDialog" timestamp="1609063302919">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

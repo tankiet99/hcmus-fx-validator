@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import com.validation.*;
+import com.validation.annotations.FXRegex;
+
+import com.validation.handler.FXValidationHandler;
 import com.validation.annotations.FXRequired;
 import com.validation.annotations.FXString;
 import com.validation.handler.DialogErrorHandler;
@@ -35,6 +39,7 @@ public class FormSubmitController {
     TextField tf3;
 
     @FXML
+    @FXRegex(regex = "^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$")
     TextField tf4;
 
     @FXML
