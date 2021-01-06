@@ -12,6 +12,8 @@ public abstract class FXAbstractValidator<T extends Control, A extends Annotatio
 
     protected A annotation;
 
+    protected String message = "error";
+
     protected final BooleanProperty isValid = new SimpleBooleanProperty(false);
 
     public FXAbstractValidator() {
@@ -24,6 +26,8 @@ public abstract class FXAbstractValidator<T extends Control, A extends Annotatio
     }
 
     public abstract void validate(T control, A annotation) throws ValidationException;
+
+    public abstract void validate(T control) throws ValidationException;
 
 
     public void validate() throws ValidationException {

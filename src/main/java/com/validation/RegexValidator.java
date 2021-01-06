@@ -11,15 +11,36 @@ import java.lang.annotation.Annotation;
 import java.util.regex.Pattern;
 
 public class RegexValidator extends FXAbstractValidator<TextInputControl, FXRegex>{
+    private String regex;
     public RegexValidator() {
+    }
+
+    public RegexValidator(String regex) {
+        this.regex = regex;
+    }
+
+    public String getRegex() {
+        return regex;
+    }
+
+    public void setRegex(String regex) {
+        this.regex = regex;
     }
 
     public RegexValidator(TextInputControl control, FXRegex annotation) {
         super(control, annotation);
     }
 
+
+
     @Override
     public void validate(TextInputControl control, FXRegex annotation) throws ValidationException {
+        setRegex(annotation.regex());
+        this.validate(control);
+    }
+
+    @Override
+    public void validate(TextInputControl control) throws ValidationException {
         if (control.isDisabled()) {
             this.isValid.set(true);
             return;
@@ -29,14 +50,13 @@ public class RegexValidator extends FXAbstractValidator<TextInputControl, FXRege
             return;
         }
 
-        String regex = annotation.regex();
         String text = control.getText();
-        boolean valid = Pattern.matches(regex,text);
+        boolean valid = Pattern.matches(this.regex,text);
         System.out.println("đã vào hàm regex validate");
 
         if(!valid)
         {
-            throw new ValidationException(annotation.message());
+            throw new ValidationException(this.message);
         }
     }
 }
