@@ -23,6 +23,8 @@ public class FXValidationHandler {
 
     private Map<String, Map<Annotation, String>> mapMessage;
 
+    private String validatorType;
+
     public FXValidationHandler() {
     }
 
