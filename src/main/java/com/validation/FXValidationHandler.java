@@ -57,6 +57,17 @@ public class FXValidationHandler {
             TextField textField = (TextField) root.lookup("#" + idNode);
             StringValidator stringValidator = new StringValidator();
             doValidate(stringValidator, textField, annotation, idNode, ((FXString) annotation).message());
+        } else if (annotation instanceof FXValidation) {
+            TextField textField = (TextField) root.lookup("#" + idNode);
+            FXAbstractValidator obj = null;
+            try {
+                obj = ((FXValidation) annotation).validation().newInstance();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+            doValidate(obj,textField, annotation, idNode, ((FXValidation) annotation).message());
         }
     }
 

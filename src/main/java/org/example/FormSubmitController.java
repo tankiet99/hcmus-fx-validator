@@ -5,12 +5,10 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-import com.validation.FXAbstractValidator;
-import com.validation.FXValidationHandler;
-import com.validation.RequiredValidator;
-import com.validation.StringValidator;
+import com.validation.*;
 import com.validation.annotations.FXRequired;
 import com.validation.annotations.FXString;
+import com.validation.annotations.FXValidation;
 import com.validation.exceptions.ValidationException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,6 +30,7 @@ public class FormSubmitController {
     public Button primaryButton;
 
     @FXML
+    @FXValidation(validation = CustomValidator.class, message = "Fail")
     TextField tf1;
 
     @FXML
