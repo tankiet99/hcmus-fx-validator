@@ -1,13 +1,15 @@
-C:\Users\TanKiet\Desktop\OOP-DesingPattren\fx-validator\src\main\java\com\validation\RequiredValidator.java
-C:\Users\TanKiet\Desktop\OOP-DesingPattren\fx-validator\src\main\java\com\validation\FXValidationHandler.java
-C:\Users\TanKiet\Desktop\OOP-DesingPattren\fx-validator\src\main\java\com\validation\annotations\FXString.java
-C:\Users\TanKiet\Desktop\OOP-DesingPattren\fx-validator\src\main\java\module-info.java
-C:\Users\TanKiet\Desktop\OOP-DesingPattren\fx-validator\src\main\java\com\validation\exceptions\FXValidatorException.java
-C:\Users\TanKiet\Desktop\OOP-DesingPattren\fx-validator\src\main\java\com\validation\exceptions\ValidationException.java
-C:\Users\TanKiet\Desktop\OOP-DesingPattren\fx-validator\src\main\java\org\example\App.java
-C:\Users\TanKiet\Desktop\OOP-DesingPattren\fx-validator\src\main\java\org\example\FormSubmitController.java
-C:\Users\TanKiet\Desktop\OOP-DesingPattren\fx-validator\src\main\java\com\validation\LabelErrorHandler.java
-C:\Users\TanKiet\Desktop\OOP-DesingPattren\fx-validator\src\main\java\com\validation\StringValidator.java
-C:\Users\TanKiet\Desktop\OOP-DesingPattren\fx-validator\src\main\java\com\validation\FXAbstractValidator.java
-C:\Users\TanKiet\Desktop\OOP-DesingPattren\fx-validator\src\main\java\org\example\SecondaryController.java
-C:\Users\TanKiet\Desktop\OOP-DesingPattren\fx-validator\src\main\java\com\validation\annotations\FXRequired.java
+E:\1712512_Kì II-4\OOP\hcmus-fx-validator\src\main\java\org\example\FormSubmitController.java
+E:\1712512_Kì II-4\OOP\hcmus-fx-validator\src\main\java\com\validation\LabelErrorHandler.java
+E:\1712512_Kì II-4\OOP\hcmus-fx-validator\src\main\java\com\validation\FXAbstractValidator.java
+E:\1712512_Kì II-4\OOP\hcmus-fx-validator\src\main\java\com\validation\FXValidationHandler.java
+E:\1712512_Kì II-4\OOP\hcmus-fx-validator\src\main\java\org\example\SecondaryController.java
+E:\1712512_Kì II-4\OOP\hcmus-fx-validator\src\main\java\com\validation\exceptions\ValidationException.java
+E:\1712512_Kì II-4\OOP\hcmus-fx-validator\src\main\java\com\validation\annotations\FXString.java
+E:\1712512_Kì II-4\OOP\hcmus-fx-validator\src\main\java\com\validation\RegexValidator.java
+E:\1712512_Kì II-4\OOP\hcmus-fx-validator\src\main\java\com\validation\StringValidator.java
+E:\1712512_Kì II-4\OOP\hcmus-fx-validator\src\main\java\module-info.java
+E:\1712512_Kì II-4\OOP\hcmus-fx-validator\src\main\java\com\validation\RequiredValidator.java
+E:\1712512_Kì II-4\OOP\hcmus-fx-validator\src\main\java\com\validation\annotations\FXRegex.java
+E:\1712512_Kì II-4\OOP\hcmus-fx-validator\src\main\java\com\validation\annotations\FXRequired.java
+E:\1712512_Kì II-4\OOP\hcmus-fx-validator\src\main\java\org\example\App.java
+E:\1712512_Kì II-4\OOP\hcmus-fx-validator\src\main\java\com\validation\exceptions\FXValidatorException.java

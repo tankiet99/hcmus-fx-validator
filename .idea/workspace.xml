@@ -23,11 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="531440db-bdb2-4e2e-865a-70d63db16179" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/validation/RegexValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/validation/annotations/FXRegex.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/validation/FXValidationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/validation/FXValidationHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/validation/LabelErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/validation/LabelErrorHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/validation/StringValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/validation/StringValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FormSubmitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FormSubmitController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/primary.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/validation/FXAbstractValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/FXAbstractValidator.class" afterDir="false" />
@@ -56,6 +55,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -80,17 +80,6 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Run" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -131,6 +120,11 @@
       <workItem from="1608978364339" duration="909000" />
       <workItem from="1608989280019" duration="6651000" />
       <workItem from="1609045509432" duration="6604000" />
+      <workItem from="1609224488294" duration="2768000" />
+      <workItem from="1609482581558" duration="8019000" />
+      <workItem from="1609595828874" duration="1302000" />
+      <workItem from="1609882945255" duration="819000" />
+      <workItem from="1609919930153" duration="1837000" />
     </task>
     <servers />
   </component>
@@ -151,47 +145,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="574" y="133" key="#com.intellij.ide.util.MemberChooser" timestamp="1609087845623">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="574" y="133" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1609087845623" />
-    <state x="551" y="312" width="433" height="216" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1609076515615">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="551" y="312" width="433" height="216" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.834@0.0.1536.834" timestamp="1609076515615" />
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1609124158160">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1609124158160" />
-    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1609124158159">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1609124158159" />
-    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1609124158159">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1609124158159" />
-    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1609124158160">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1609124158160" />
-    <state x="147" y="66" key="MergeDialog" timestamp="1609063302919">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="147" y="66" key="MergeDialog/0.0.1536.834@0.0.1536.834" timestamp="1609063302919" />
-    <state x="407" y="179" key="MultipleFileMergeDialog" timestamp="1609063302928">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="407" y="179" key="MultipleFileMergeDialog/0.0.1536.834@0.0.1536.834" timestamp="1609063302928" />
-    <state x="461" y="176" key="Vcs.Multiple.Commit.Info.Dialog.Key" timestamp="1609063111176">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="461" y="176" key="Vcs.Multiple.Commit.Info.Dialog.Key/0.0.1536.834@0.0.1536.834" timestamp="1609063111176" />
-    <state x="425" y="189" key="run.anything.popup" timestamp="1609122724540">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1609122724540" />
   </component>
 </project>

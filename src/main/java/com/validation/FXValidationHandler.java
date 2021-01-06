@@ -1,5 +1,6 @@
 package com.validation;
 
+import com.validation.annotations.FXRegex;
 import com.validation.annotations.FXRequired;
 import com.validation.annotations.FXString;
 import com.validation.exceptions.ValidationException;
@@ -52,7 +53,13 @@ public class FXValidationHandler {
             TextField textField = (TextField) root.lookup("#" + idNode);
             StringValidator stringValidator = new StringValidator();
             doValidate(stringValidator, textField, annotation, idNode, ((FXString) annotation).message());
+        }else if (annotation instanceof FXRegex) {
+            TextField textField = (TextField) root.lookup("#" + idNode);
+            RegexValidator regexValidator = new RegexValidator();
+            doValidate(regexValidator, textField, annotation, idNode, ((FXRegex) annotation).message());
         }
+
+        // tạo 1 lớp làm cái dovalidate() có thuộc tính là cái thằng validator của mình
     }
 
     private void doValidate(FXAbstractValidator validator, TextField textField, Annotation annotation, String idNode, String msg) {

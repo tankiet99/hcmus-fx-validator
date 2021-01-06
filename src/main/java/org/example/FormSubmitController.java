@@ -9,6 +9,7 @@ import com.validation.FXAbstractValidator;
 import com.validation.FXValidationHandler;
 import com.validation.RequiredValidator;
 import com.validation.StringValidator;
+import com.validation.annotations.FXRegex;
 import com.validation.annotations.FXRequired;
 import com.validation.annotations.FXString;
 import com.validation.exceptions.ValidationException;
@@ -32,18 +33,20 @@ public class FormSubmitController {
     public Button primaryButton;
 
     @FXML
+    @FXRequired(message = "required field!")
     TextField tf1;
 
     @FXML
+    @FXString(min = 10, message = "độ dài không hợp lệ")
     @FXRequired(message = "required field!")
     TextField tf2;
 
     @FXML
     @FXRequired(message = "field is required!")
-    @FXString(max = 10, min = 5, message = "độ dài filed không hợp lệ")
     TextField tf3;
 
     @FXML
+    @FXRegex(regex = "^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$")
     TextField tf4;
 
     @FXML
