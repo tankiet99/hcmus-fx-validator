@@ -3,14 +3,11 @@ package com.validation;
 import com.validation.annotations.FXRegex;
 import com.validation.annotations.FXRequired;
 import com.validation.annotations.FXString;
+import com.validation.annotations.FXValidation;
 import com.validation.exceptions.ValidationException;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TextInputControl;
 
-import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.HashMap;
@@ -22,6 +19,8 @@ public class FXValidationHandler {
     private Node root;
 
     private Map<String, Map<Annotation, String>> mapMessage;
+
+    private String validatorType;
 
     public FXValidationHandler() {
     }
@@ -44,6 +43,10 @@ public class FXValidationHandler {
         }
     }
 
+    public void handle(String validatorType, TextField tf, String msg) {
+//        doValidate(new ValidatorFactory().getValidator(validatorType), tf, tf.getId(), msg);
+    }
+
     private void getValidator(Annotation annotation, String idNode) {
         if (annotation instanceof FXRequired) {
             TextField textField = (TextField) root.lookup("#" + idNode);
@@ -57,9 +60,18 @@ public class FXValidationHandler {
             TextField textField = (TextField) root.lookup("#" + idNode);
             RegexValidator regexValidator = new RegexValidator();
             doValidate(regexValidator, textField, annotation, idNode, ((FXRegex) annotation).message());
+        } else if (annotation instanceof FXValidation) {
+            TextField textField = (TextField) root.lookup("#" + idNode);
+            FXAbstractValidator obj = null;
+            try {
+                obj = ((FXValidation) annotation).validation().newInstance();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+            doValidate(obj,textField, annotation, idNode, ((FXValidation) annotation).message());
         }
-
-        // tạo 1 lớp làm cái dovalidate() có thuộc tính là cái thằng validator của mình
     }
 
     private void doValidate(FXAbstractValidator validator, TextField textField, Annotation annotation, String idNode, String msg) {
@@ -71,13 +83,13 @@ public class FXValidationHandler {
             String msgErr = "";
             if (mapMessage.get(idNode) != null) {
                 for (Map.Entry el: mapMessage.get(idNode).entrySet()) {
-                    msgErr = msgErr.concat(((String) el.getValue()));
+                    msgErr = msgErr.concat(((String) el.getValue()) + " | ");
                 }
             }
             if (!msgErr.equals("")) {
-                LabelErrorHandler.displayErrorLabel(root, idNode, true, msgErr);
+                LabelErrorHandler.getInstance().displayErrorLabel(root, idNode, true, msgErr);
             } else {
-                LabelErrorHandler.displayErrorLabel(root, idNode, false, null);
+                LabelErrorHandler.getInstance().displayErrorLabel(root, idNode, false, null);
             }
         } catch (ValidationException e) {
             if (mapMessage.get(idNode) == null) {
@@ -88,9 +100,9 @@ public class FXValidationHandler {
             }
             String msgErr = "";
             for (Map.Entry el: mapMessage.get(idNode).entrySet()) {
-                msgErr = msgErr.concat(((String) el.getValue()));
+                msgErr = msgErr.concat(((String) el.getValue()) + " | ");
             }
-            LabelErrorHandler.displayErrorLabel(root, idNode, true, msgErr);
+            LabelErrorHandler.getInstance().displayErrorLabel(root, idNode, true, msgErr);
         }
     }
 }

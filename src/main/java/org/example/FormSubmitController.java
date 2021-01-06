@@ -1,25 +1,17 @@
 package org.example;
 
 import java.io.IOException;
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-import com.validation.FXAbstractValidator;
-import com.validation.FXValidationHandler;
-import com.validation.RequiredValidator;
-import com.validation.StringValidator;
+import com.validation.*;
 import com.validation.annotations.FXRegex;
+
+import com.validation.FXValidationHandler;
 import com.validation.annotations.FXRequired;
 import com.validation.annotations.FXString;
-import com.validation.exceptions.ValidationException;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -33,16 +25,15 @@ public class FormSubmitController {
     public Button primaryButton;
 
     @FXML
-    @FXRequired(message = "required field!")
     TextField tf1;
 
     @FXML
-    @FXString(min = 10, message = "độ dài không hợp lệ")
     @FXRequired(message = "required field!")
     TextField tf2;
 
     @FXML
     @FXRequired(message = "field is required!")
+    @FXString(max = 10, min = 5, message = "độ dài filed không hợp lệ")
     TextField tf3;
 
     @FXML
@@ -56,6 +47,9 @@ public class FormSubmitController {
     private void submit() throws IOException{
 //        App.setRoot("secondary");
         new FXValidationHandler(FormSubmitController.class, anchorPane).handle();
+//        Validator.valid("STRING", "dkfd", 2, 3, tf1);
+        new DialogErrorHandler().display(new ArrayList<String>(Arrays.asList("Độ dài không hợp lệ", "Email không phù hợp")));
+
       /*  Class<?> aClazz = FormSubmitController.class;
 
         //lấy cái Field khai báo là tf3 ra
