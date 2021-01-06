@@ -23,9 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="531440db-bdb2-4e2e-865a-70d63db16179" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/validation/DialogErrorHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/validation/NumberValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/validation/annotations/FXNumber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FormSubmitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FormSubmitController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,13 +60,15 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -111,6 +113,7 @@
       <workItem from="1608978364339" duration="909000" />
       <workItem from="1608989280019" duration="6651000" />
       <workItem from="1609045509432" duration="6604000" />
+      <workItem from="1609921835238" duration="65000" />
     </task>
     <servers />
   </component>
@@ -157,7 +160,7 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1609587071279" />
-=======
+    =======
     <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1609124158160">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -174,7 +177,7 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1609124158160" />
->>>>>>> 09eaa93faf5d6a8a079ada80db01e31de8f16894
+    &gt;&gt;&gt;&gt;&gt;&gt;&gt; 09eaa93faf5d6a8a079ada80db01e31de8f16894
     <state x="147" y="66" key="MergeDialog" timestamp="1609063302919">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
