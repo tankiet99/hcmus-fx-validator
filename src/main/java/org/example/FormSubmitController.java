@@ -1,23 +1,15 @@
 package org.example;
 
 import java.io.IOException;
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import com.validation.*;
 import com.validation.annotations.FXRequired;
 import com.validation.annotations.FXString;
-import com.validation.exceptions.ValidationException;
+import com.validation.handler.DialogErrorHandler;
+import com.validation.handler.FXValidationHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;

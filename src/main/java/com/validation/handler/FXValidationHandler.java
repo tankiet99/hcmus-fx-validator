@@ -1,16 +1,15 @@
-package com.validation;
+package com.validation.handler;
 
+import com.validation.FXAbstractValidator;
+import com.validation.RequiredValidator;
+import com.validation.StringValidator;
 import com.validation.annotations.FXRequired;
 import com.validation.annotations.FXString;
 import com.validation.annotations.FXValidation;
 import com.validation.exceptions.ValidationException;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TextInputControl;
 
-import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.HashMap;
@@ -51,7 +50,6 @@ public class FXValidationHandler {
     }
 
     private void getValidator(Annotation annotation, String idNode) {
-
         if (annotation instanceof FXRequired) {
             TextField textField = (TextField) root.lookup("#" + idNode);
             RequiredValidator requiredValidator = new RequiredValidator();

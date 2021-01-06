@@ -1,4 +1,4 @@
-package com.validation;
+package com.validation.handler;
 
 import javafx.scene.control.Alert;
 
