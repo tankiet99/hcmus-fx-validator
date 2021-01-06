@@ -50,7 +50,7 @@ public class FormSubmitController {
 //        App.setRoot("secondary");
         new FXValidationHandler(FormSubmitController.class, anchorPane).handle();
 //        Validator.valid("STRING", "dkfd", 2, 3, tf1);
-        new DialogErrorHandler().display(new ArrayList<String>(Arrays.asList("Độ dài không hợp lệ", "Email không phù hợp")));
+//        new DialogErrorHandler().display(new ArrayList<String>(Arrays.asList("Độ dài không hợp lệ", "Email không phù hợp")));
 
       /*  Class<?> aClazz = FormSubmitController.class;
 

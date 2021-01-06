@@ -14,6 +14,14 @@ public abstract class FXAbstractValidator<T extends Control, A extends Annotatio
 
     protected String message = "error";
 
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
     protected final BooleanProperty isValid = new SimpleBooleanProperty(false);
 
     public FXAbstractValidator() {

@@ -1,10 +1,7 @@
 package com.validation.handler;
 
-import com.validation.RegexValidator;
+import com.validation.*;
 import com.validation.annotations.FXRegex;
-import com.validation.FXAbstractValidator;
-import com.validation.RequiredValidator;
-import com.validation.StringValidator;
 import com.validation.annotations.FXRequired;
 import com.validation.annotations.FXString;
 import com.validation.annotations.FXValidation;
@@ -48,7 +45,7 @@ public class FXValidationHandler {
     }
 
     public void handle(String validatorType, TextField tf, String msg) {
-//        doValidate(new ValidatorFactory().getValidator(validatorType), tf, tf.getId(), msg);
+        doValidate(ValidatorFactory.getValidator(validatorType), tf, null, tf.getId(), msg);
     }
 
     private void getValidator(Annotation annotation, String idNode) {
@@ -80,7 +77,12 @@ public class FXValidationHandler {
 
     private void doValidate(FXAbstractValidator validator, TextField textField, Annotation annotation, String idNode, String msg) {
         try {
-            validator.validate(textField, annotation);
+            if (annotation == null) {
+                validator.setMessage(msg);
+                validator.validate(textField);
+            } else {
+                validator.validate(textField, annotation);
+            }
             if (mapMessage.get(idNode) != null) {
                 mapMessage.get(idNode).remove(annotation);
             }

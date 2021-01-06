@@ -1,7 +1,7 @@
 package com.validation;
 
 public class ValidatorFactory {
-    public FXAbstractValidator getValidator(String validatorType) {
+    public static FXAbstractValidator getValidator(String validatorType) {
         if (validatorType == null) {
             return null;
         }
