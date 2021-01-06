@@ -3,6 +3,7 @@ package org.example;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.validation.*;
 import com.validation.annotations.FXRegex;
@@ -48,9 +49,14 @@ public class FormSubmitController {
     @FXML
     private void submit() throws IOException{
 //        App.setRoot("secondary");
-        new FXValidationHandler(FormSubmitController.class, anchorPane).handle();
+        FXValidationHandler handler = new FXValidationHandler(FormSubmitController.class, anchorPane);
+        handler.handle();
+        List<String> args = new ArrayList<>();
+        args.add("Loi ne");
+        handler.handle("REQUIRED", tf1, args);
+
 //        Validator.valid("STRING", "dkfd", 2, 3, tf1);
-        new DialogErrorHandler().display(new ArrayList<String>(Arrays.asList("Độ dài không hợp lệ", "Email không phù hợp")));
+//        new DialogErrorHandler().display(new ArrayList<String>(Arrays.asList("Độ dài không hợp lệ", "Email không phù hợp")));
 
       /*  Class<?> aClazz = FormSubmitController.class;
 

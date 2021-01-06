@@ -1,5 +1,10 @@
 package com.validation;
 
+import com.validation.exceptions.ValidationException;
+import javafx.scene.control.TextInputControl;
+
+import java.lang.annotation.Annotation;
+
 public class ValidatorContext {
     private FXAbstractValidator strategy;
 
@@ -7,7 +12,11 @@ public class ValidatorContext {
         this.strategy = strategy;
     }
 
-    public void executeStrategy() {
-
+    public void executeStrategyAuto(TextInputControl tf, Annotation annotation) throws ValidationException {
+        if (annotation == null) {
+            strategy.validate(tf);
+        } else {
+            strategy.validate(tf, annotation);
+        }
     }
 }

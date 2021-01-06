@@ -19,6 +19,10 @@ public class RequiredValidator extends FXAbstractValidator<TextInputControl, FXR
         super();
     }
 
+    public RequiredValidator(String message) {
+        this.message = message;
+    }
+
     public RequiredValidator(TextInputControl control, FXRequired annotation) {
         super(control, annotation);
     }
