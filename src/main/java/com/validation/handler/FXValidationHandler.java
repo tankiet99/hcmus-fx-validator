@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class FXValidationHandler {
@@ -44,8 +45,8 @@ public class FXValidationHandler {
         }
     }
 
-    public void handle(String validatorType, TextField tf, String msg) {
-        doValidate(ValidatorFactory.getValidator(validatorType), tf, null, tf.getId(), msg);
+    public void handle(String validatorType, TextField tf, List<String> args) {
+        doValidate(ValidatorFactory.getValidator(validatorType, args), tf, null, tf.getId(), args.get(args.size() - 1));
     }
 
     private void getValidator(Annotation annotation, String idNode) {
@@ -77,12 +78,8 @@ public class FXValidationHandler {
 
     private void doValidate(FXAbstractValidator validator, TextField textField, Annotation annotation, String idNode, String msg) {
         try {
-            if (annotation == null) {
-                validator.setMessage(msg);
-                validator.validate(textField);
-            } else {
-                validator.validate(textField, annotation);
-            }
+            // Dung mau strategy
+            new ValidatorContext(validator).executeStrategyAuto(textField, annotation);
             if (mapMessage.get(idNode) != null) {
                 mapMessage.get(idNode).remove(annotation);
             }
