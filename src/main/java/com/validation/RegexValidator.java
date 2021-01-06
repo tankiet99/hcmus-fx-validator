@@ -15,8 +15,9 @@ public class RegexValidator extends FXAbstractValidator<TextInputControl, FXRege
     public RegexValidator() {
     }
 
-    public RegexValidator(String regex) {
+    public RegexValidator(String regex, String message) {
         this.regex = regex;
+        this.message = message;
     }
 
     public String getRegex() {
