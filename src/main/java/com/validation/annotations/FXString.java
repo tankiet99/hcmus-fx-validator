@@ -16,5 +16,5 @@ public @interface FXString {
     Class<? extends FXAbstractValidator> validation() default RequiredValidator.class;
     int max() default 100;
     int min() default 0;
-    String message() default "This field must not be null!";
+    String message() default "length of field is not valid!";
 }

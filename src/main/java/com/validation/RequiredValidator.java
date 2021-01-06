@@ -5,6 +5,16 @@ import com.validation.exceptions.ValidationException;
 import javafx.scene.control.TextInputControl;
 
 public class RequiredValidator extends FXAbstractValidator<TextInputControl, FXRequired> {
+    private String message = "This field must not be null!";
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
     public RequiredValidator() {
         super();
     }
@@ -15,6 +25,12 @@ public class RequiredValidator extends FXAbstractValidator<TextInputControl, FXR
 
     @Override
     public void validate(TextInputControl control, FXRequired annotation) throws ValidationException {
+        this.message = annotation.message();
+        validate(control);
+    }
+
+    @Override
+    public void validate(TextInputControl control) throws ValidationException {
         if (control.isDisabled()) {
             this.isValid.set(true);
             return;
@@ -28,7 +44,7 @@ public class RequiredValidator extends FXAbstractValidator<TextInputControl, FXR
         this.isValid.set(valid);
 
         if (!valid) {
-            throw new ValidationException(annotation.message());
+            throw new ValidationException(this.message);
         }
     }
 }
