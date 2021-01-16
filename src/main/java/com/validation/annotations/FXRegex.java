@@ -1,7 +1,7 @@
 package com.validation.annotations;
 
 import com.validation.FXAbstractValidator;
-import com.validation.RegexValidator;
+import com.validation.validator.RegexValidator;
 
 import java.lang.annotation.*;
 

@@ -1,18 +1,12 @@
 package org.example;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
-import com.validation.*;
 import com.validation.annotations.FXRegex;
 
 import com.validation.handler.FXValidationHandler;
 import com.validation.annotations.FXRequired;
 import com.validation.annotations.FXString;
-import com.validation.handler.DialogErrorHandler;
-import com.validation.handler.FXValidationHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -47,14 +41,13 @@ public class FormSubmitController {
     Label lb1;
 
     @FXML
-    private void submit() throws IOException{
+    private void submit() {
 //        App.setRoot("secondary");
-        FXValidationHandler handler = new FXValidationHandler(FormSubmitController.class, anchorPane);
+        FXValidationHandler handler = new FXValidationHandler(FormSubmitController.class, anchorPane, "DIALOG");
+        handler.addValidate("REQUIRED", tf1, Arrays.asList("Loi ne"));
+        handler.addValidate("REQUIRED", tf2, Arrays.asList("Lai loi ne"));
         handler.handle();
-        List<String> args = new ArrayList<>();
-        args.add("Loi ne");
-        handler.handle("REQUIRED", tf1, args);
-
+        handler.executeValidate();
 //        Validator.valid("STRING", "dkfd", 2, 3, tf1);
 //        new DialogErrorHandler().display(new ArrayList<String>(Arrays.asList("Độ dài không hợp lệ", "Email không phù hợp")));
 

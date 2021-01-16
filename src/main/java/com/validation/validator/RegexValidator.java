@@ -1,16 +1,13 @@
-package com.validation;
+package com.validation.validator;
 
+import com.validation.FXAbstractValidator;
 import com.validation.annotations.FXRegex;
-import com.validation.annotations.FXRequired;
 import com.validation.exceptions.ValidationException;
-import javafx.scene.Parent;
-import javafx.scene.control.Control;
 import javafx.scene.control.TextInputControl;
 
-import java.lang.annotation.Annotation;
 import java.util.regex.Pattern;
 
-public class RegexValidator extends FXAbstractValidator<TextInputControl, FXRegex>{
+public class RegexValidator extends FXAbstractValidator<TextInputControl, FXRegex> {
     private String regex;
     public RegexValidator() {
     }
@@ -51,7 +48,6 @@ public class RegexValidator extends FXAbstractValidator<TextInputControl, FXRege
 
         String text = control.getText();
         boolean valid = Pattern.matches(this.regex,text);
-        System.out.println("đã vào hàm regex validate");
 
         if(!valid)
         {

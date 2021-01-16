@@ -1,5 +1,7 @@
 package com.validation;
 
+import com.validation.validator.*;
+
 import java.util.List;
 
 public class ValidatorFactory {

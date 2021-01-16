@@ -1,4 +1,4 @@
-package com.validation.handler;
+package com.validation.display;
 
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -10,14 +10,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LabelErrorHandler {
+public class LabelErrorDisplay {
     private final String VALIDATION_MSG = "validation-message";
     private final Map<Node, List<Label>> nodeListMap = new HashMap<>();
-    private static final LabelErrorHandler instance = new LabelErrorHandler();
+    private static final LabelErrorDisplay instance = new LabelErrorDisplay();
 
-    private LabelErrorHandler() {}
+    private LabelErrorDisplay() {}
 
-    public static LabelErrorHandler getInstance() {
+    public static LabelErrorDisplay getInstance() {
         return instance;
     }
 
@@ -57,13 +57,11 @@ public class LabelErrorHandler {
         if (list == null) {
             initialize(node);
             list = nodeListMap.get(node);
-            System.out.println(list);
         }
         return list;
     }
 
     public void displayErrorLabel(Node node, String idNode, Boolean isError, String msg) {
-        System.out.println(idNode + "   " + isError + "  " + msg);
         List<Label> list = getLabelForNode(node);
         for (Label label:
              list) {

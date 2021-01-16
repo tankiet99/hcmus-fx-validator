@@ -1,7 +1,7 @@
 package com.validation.annotations;
 
 import com.validation.FXAbstractValidator;
-import com.validation.RequiredValidator;
+import com.validation.validator.RequiredValidator;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

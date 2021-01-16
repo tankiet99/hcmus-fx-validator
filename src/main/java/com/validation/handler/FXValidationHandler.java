@@ -5,7 +5,14 @@ import com.validation.annotations.FXRegex;
 import com.validation.annotations.FXRequired;
 import com.validation.annotations.FXString;
 import com.validation.annotations.FXValidation;
+import com.validation.display.DialogErrorDisplay;
+import com.validation.display.LabelErrorDisplay;
 import com.validation.exceptions.ValidationException;
+import com.validation.FXAbstractValidator;
+import com.validation.validator.RegexValidator;
+import com.validation.validator.RequiredValidator;
+import com.validation.validator.StringValidator;
+import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.TextField;
 
@@ -22,31 +29,64 @@ public class FXValidationHandler {
 
     private Map<String, Map<Annotation, String>> mapMessage;
 
+    private Map<TextField, FXAbstractValidator> mapValidator;
+
     private String validatorType;
+
+    private String displayType;
 
     public FXValidationHandler() {
     }
 
-    public FXValidationHandler(Class controller, Node root) {
+    public FXValidationHandler(Class controller, Node root, String displayType) {
         this.controller = controller;
         this.root = root;
+        this.displayType = displayType;
         this.mapMessage = new HashMap<>();
+        this.mapValidator = new HashMap<>();
     }
 
     public void handle() {
         Class<?> aClazz = controller;
         Field[] fields = aClazz.getDeclaredFields();
+        if ("DIALOG".equals(displayType)) {
+            for(Field field: fields){
+                Annotation[] annotations = (Annotation[]) field.getAnnotations();
+                int totalValidator = 0;
+                for (Annotation annotation: annotations){
+                    if (annotation instanceof FXML) continue;
+                    totalValidator++;
+                }
+                DialogErrorDisplay.getInstance().setTotalValidator(DialogErrorDisplay.getInstance().getTotalValidator() + totalValidator);
+            }
+
+        }
         for(Field field: fields){
             Annotation[] annotations = (Annotation[]) field.getAnnotations();
             String idNode = field.getName();
+
+
             for (Annotation annotation: annotations){
                 getValidator(annotation, idNode);
             }
         }
     }
 
-    public void handle(String validatorType, TextField tf, List<String> args) {
-        doValidate(ValidatorFactory.getValidator(validatorType, args), tf, null, tf.getId(), args.get(args.size() - 1));
+    public void addValidate(String validatorType, TextField tf, List<String> args) {
+//        doValidate(ValidatorFactory.getValidator(validatorType, args), tf, null, tf.getId(), args.get(args.size() - 1));
+        this.mapValidator.put(tf, ValidatorFactory.getValidator(validatorType, args));
+        if ("DIALOG".equals(displayType)) {
+            DialogErrorDisplay.getInstance().setTotalValidator(DialogErrorDisplay.getInstance().getTotalValidator() + 1);
+        }
+    }
+
+    public void executeValidate() {
+        for (Map.Entry el:
+             this.mapValidator.entrySet()) {
+            doValidate(((FXAbstractValidator) el.getValue()), ((TextField) el.getKey()), null,
+                    ((TextField) el.getKey()).getId(),
+                    ((FXAbstractValidator) el.getValue()).getMessage());
+        }
     }
 
     private void getValidator(Annotation annotation, String idNode) {
@@ -79,7 +119,8 @@ public class FXValidationHandler {
     private void doValidate(FXAbstractValidator validator, TextField textField, Annotation annotation, String idNode, String msg) {
         try {
             // Dung mau strategy
-            new ValidatorContext(validator).executeStrategyAuto(textField, annotation);
+            new ValidatorContext(validator).executeStrategy(textField, annotation);
+            DialogErrorDisplay.getInstance().setTotalValidator(DialogErrorDisplay.getInstance().getTotalValidator() - 1);
             if (mapMessage.get(idNode) != null) {
                 mapMessage.get(idNode).remove(annotation);
             }
@@ -89,10 +130,16 @@ public class FXValidationHandler {
                     msgErr = msgErr.concat(((String) el.getValue()) + " | ");
                 }
             }
-            if (!msgErr.equals("")) {
-                LabelErrorHandler.getInstance().displayErrorLabel(root, idNode, true, msgErr);
-            } else {
-                LabelErrorHandler.getInstance().displayErrorLabel(root, idNode, false, null);
+            if ("DIALOG".equals(displayType)) {
+                if (!msgErr.equals("")) {
+                    DialogErrorDisplay.getInstance().display(textField, msgErr);
+                }
+            } if ("LABEL".equals(displayType)) {
+                if (!msgErr.equals("")) {
+                    LabelErrorDisplay.getInstance().displayErrorLabel(root, idNode, true, msgErr);
+                } else {
+                    LabelErrorDisplay.getInstance().displayErrorLabel(root, idNode, false, null);
+                }
             }
         } catch (ValidationException e) {
             if (mapMessage.get(idNode) == null) {
@@ -105,7 +152,11 @@ public class FXValidationHandler {
             for (Map.Entry el: mapMessage.get(idNode).entrySet()) {
                 msgErr = msgErr.concat(((String) el.getValue()) + " | ");
             }
-            LabelErrorHandler.getInstance().displayErrorLabel(root, idNode, true, msgErr);
+            if ("DIALOG".equals(displayType)) {
+                DialogErrorDisplay.getInstance().display(textField, msgErr);
+            } if ("LABEL".equals(displayType)) {
+                LabelErrorDisplay.getInstance().displayErrorLabel(root, idNode, true, msgErr);
+            }
         }
     }
 }

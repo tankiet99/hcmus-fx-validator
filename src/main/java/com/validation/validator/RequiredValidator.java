@@ -1,5 +1,6 @@
-package com.validation;
+package com.validation.validator;
 
+import com.validation.FXAbstractValidator;
 import com.validation.annotations.FXRequired;
 import com.validation.exceptions.ValidationException;
 import javafx.scene.control.TextInputControl;

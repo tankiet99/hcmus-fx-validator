@@ -12,7 +12,7 @@ public class ValidatorContext {
         this.strategy = strategy;
     }
 
-    public void executeStrategyAuto(TextInputControl tf, Annotation annotation) throws ValidationException {
+    public void executeStrategy(TextInputControl tf, Annotation annotation) throws ValidationException {
         if (annotation == null) {
             strategy.validate(tf);
         } else {

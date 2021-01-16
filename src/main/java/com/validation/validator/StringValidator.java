@@ -1,12 +1,13 @@
-package com.validation;
+package com.validation.validator;
 
+import com.validation.FXAbstractValidator;
 import com.validation.annotations.FXString;
 import com.validation.exceptions.ValidationException;
 import javafx.scene.control.TextInputControl;
 
 import java.lang.annotation.Annotation;
 
-public class StringValidator extends FXAbstractValidator<TextInputControl, FXString>{
+public class StringValidator extends FXAbstractValidator<TextInputControl, FXString> {
     private int min=0;
     private int max =100;
     private String message = "length of field is not valid!";
