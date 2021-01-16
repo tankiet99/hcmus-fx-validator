@@ -120,7 +120,6 @@ public class FXValidationHandler {
         try {
             // Dung mau strategy
             new ValidatorContext(validator).executeStrategy(textField, annotation);
-            DialogErrorDisplay.getInstance().setTotalValidator(DialogErrorDisplay.getInstance().getTotalValidator() - 1);
             if (mapMessage.get(idNode) != null) {
                 mapMessage.get(idNode).remove(annotation);
             }
@@ -133,6 +132,8 @@ public class FXValidationHandler {
             if ("DIALOG".equals(displayType)) {
                 if (!msgErr.equals("")) {
                     DialogErrorDisplay.getInstance().display(textField, msgErr);
+                } else {
+                    DialogErrorDisplay.getInstance().display(textField, null);
                 }
             } if ("LABEL".equals(displayType)) {
                 if (!msgErr.equals("")) {
