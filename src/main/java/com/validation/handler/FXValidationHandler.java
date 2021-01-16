@@ -22,74 +22,30 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class FXValidationHandler {
-    private Class controller;
+public abstract class FXValidationHandler {
+    protected Class controller;
 
-    private Node root;
+    protected Node root;
 
-    private Map<String, Map<Annotation, String>> mapMessage;
+    protected Map<String, Map<Annotation, String>> mapMessage;
 
-    private Map<TextField, FXAbstractValidator> mapValidator;
-
-    private String validatorType;
-
-    private String displayType;
+    protected Map<TextField, FXAbstractValidator> mapValidator;
 
     public FXValidationHandler() {
     }
 
-    public FXValidationHandler(Class controller, Node root, String displayType) {
+    public FXValidationHandler(Class controller, Node root) {
         this.controller = controller;
         this.root = root;
-        this.displayType = displayType;
         this.mapMessage = new HashMap<>();
         this.mapValidator = new HashMap<>();
     }
 
-    public void handle() {
-        Class<?> aClazz = controller;
-        Field[] fields = aClazz.getDeclaredFields();
-        if ("DIALOG".equals(displayType)) {
-            for(Field field: fields){
-                Annotation[] annotations = (Annotation[]) field.getAnnotations();
-                int totalValidator = 0;
-                for (Annotation annotation: annotations){
-                    if (annotation instanceof FXML) continue;
-                    totalValidator++;
-                }
-                DialogErrorDisplay.getInstance().setTotalValidator(DialogErrorDisplay.getInstance().getTotalValidator() + totalValidator);
-            }
+    public abstract void handle();
 
-        }
-        for(Field field: fields){
-            Annotation[] annotations = (Annotation[]) field.getAnnotations();
-            String idNode = field.getName();
+    public abstract void addValidate(String validatorType, TextField tf, List<String> args);
 
-
-            for (Annotation annotation: annotations){
-                getValidator(annotation, idNode);
-            }
-        }
-    }
-
-    public void addValidate(String validatorType, TextField tf, List<String> args) {
-//        doValidate(ValidatorFactory.getValidator(validatorType, args), tf, null, tf.getId(), args.get(args.size() - 1));
-        this.mapValidator.put(tf, ValidatorFactory.getValidator(validatorType, args));
-        if ("DIALOG".equals(displayType)) {
-            DialogErrorDisplay.getInstance().setTotalValidator(DialogErrorDisplay.getInstance().getTotalValidator() + 1);
-        }
-    }
-
-    public void executeValidate() {
-        for (Map.Entry el:
-             this.mapValidator.entrySet()) {
-            doValidate(((FXAbstractValidator) el.getValue()), ((TextField) el.getKey()), null,
-                    ((TextField) el.getKey()).getId(),
-                    ((FXAbstractValidator) el.getValue()).getMessage());
-        }
-    }
-
-    private void getValidator(Annotation annotation, String idNode) {
+    protected void getValidator(Annotation annotation, String idNode) {
         if (annotation instanceof FXRequired) {
             TextField textField = (TextField) root.lookup("#" + idNode);
             RequiredValidator requiredValidator = new RequiredValidator();
@@ -116,48 +72,19 @@ public class FXValidationHandler {
         }
     }
 
-    private void doValidate(FXAbstractValidator validator, TextField textField, Annotation annotation, String idNode, String msg) {
-        try {
-            // Dung mau strategy
-            new ValidatorContext(validator).executeStrategy(textField, annotation);
-            if (mapMessage.get(idNode) != null) {
-                mapMessage.get(idNode).remove(annotation);
-            }
-            String msgErr = "";
-            if (mapMessage.get(idNode) != null) {
-                for (Map.Entry el: mapMessage.get(idNode).entrySet()) {
-                    msgErr = msgErr.concat(((String) el.getValue()) + " | ");
-                }
-            }
-            if ("DIALOG".equals(displayType)) {
-                if (!msgErr.equals("")) {
-                    DialogErrorDisplay.getInstance().display(textField, msgErr);
-                } else {
-                    DialogErrorDisplay.getInstance().display(textField, null);
-                }
-            } if ("LABEL".equals(displayType)) {
-                if (!msgErr.equals("")) {
-                    LabelErrorDisplay.getInstance().displayErrorLabel(root, idNode, true, msgErr);
-                } else {
-                    LabelErrorDisplay.getInstance().displayErrorLabel(root, idNode, false, null);
-                }
-            }
-        } catch (ValidationException e) {
-            if (mapMessage.get(idNode) == null) {
-                mapMessage.put(idNode, new HashMap<>());
-                mapMessage.get(idNode).put(annotation, msg);
-            } else {
-                mapMessage.get(idNode).put(annotation, msg);
-            }
-            String msgErr = "";
-            for (Map.Entry el: mapMessage.get(idNode).entrySet()) {
-                msgErr = msgErr.concat(((String) el.getValue()) + " | ");
-            }
-            if ("DIALOG".equals(displayType)) {
-                DialogErrorDisplay.getInstance().display(textField, msgErr);
-            } if ("LABEL".equals(displayType)) {
-                LabelErrorDisplay.getInstance().displayErrorLabel(root, idNode, true, msgErr);
-            }
+    protected abstract void doValidate(FXAbstractValidator validator,
+                                       TextField textField,
+                                       Annotation annotation,
+                                       String idNode, String msg);
+
+    public final void executeValidate() {
+        handle();
+        if (this.mapValidator.size() == 0) return;
+        for (Map.Entry el:
+                this.mapValidator.entrySet()) {
+            doValidate(((FXAbstractValidator) el.getValue()), ((TextField) el.getKey()), null,
+                    ((TextField) el.getKey()).getId(),
+                    ((FXAbstractValidator) el.getValue()).getMessage());
         }
     }
 }

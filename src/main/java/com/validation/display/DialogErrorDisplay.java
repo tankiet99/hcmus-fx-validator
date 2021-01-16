@@ -43,7 +43,7 @@ public class DialogErrorDisplay {
     }
 
     public void addValidator(TextField tf, String msg) {
-        this.errors.put(tf, msg);
+        if (msg != null) this.errors.put(tf, msg);
         this.currentValidator++;
     }
 

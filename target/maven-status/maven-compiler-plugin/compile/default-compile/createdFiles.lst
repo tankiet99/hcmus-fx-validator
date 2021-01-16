@@ -6,6 +6,8 @@ com\validation\validator\CustomValidator.class
 com\validation\ValidatorContext.class
 com\validation\validator\RequiredValidator.class
 module-info.class
+com\validation\handler\FXValidationHandlerWithDialog.class
+com\validation\handler\FXValidationHandlerWithLabel.class
 org\example\App.class
 com\validation\annotations\FXNumber.class
 com\validation\annotations\FXRequired.class
