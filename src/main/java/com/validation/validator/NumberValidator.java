@@ -53,6 +53,7 @@ public class NumberValidator extends FXAbstractValidator<TextInputControl, FXNum
         setMax(annotation.max());
         setMin(annotation.min());
         setStringMessage(annotation.message());
+        this.validate(control);
     }
 
     @Override
@@ -66,20 +67,25 @@ public class NumberValidator extends FXAbstractValidator<TextInputControl, FXNum
             return;
         }
         boolean err = true;
-        Number number = Double.parseDouble(control.getText());
+        try {
 
-        if (annotation.min() != Double.MIN_VALUE) {
-            err = err && (number.doubleValue() >= annotation.min());
+            System.out.println(control.getText());
+            Double number = Double.parseDouble(control.getText());
+            if (this.min != Double.MIN_VALUE) {
+                err = err && (number.doubleValue() >= this.min);
+            }
+
+            if (this.max != Double.MAX_VALUE) {
+                err = err && (number.doubleValue() <= this.max);
+            }
+            System.out.println(err);
+            this.isValid.set(err);
+            if (!err) {
+                throw new ValidationException(this.message);
+            }
         }
-
-        if (annotation.max() != Double.MAX_VALUE) {
-            err = err && (number.doubleValue() <= annotation.max());
-        }
-        System.out.println(err);
-        this.isValid.set(err);
-
-        if (!err) {
-            throw new ValidationException(annotation.message());
+        catch (Exception e){
+            throw new ValidationException(this.message);
         }
     }
 }
