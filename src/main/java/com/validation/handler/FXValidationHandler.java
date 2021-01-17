@@ -1,14 +1,12 @@
 package com.validation.handler;
 
 import com.validation.*;
-import com.validation.annotations.FXRegex;
-import com.validation.annotations.FXRequired;
-import com.validation.annotations.FXString;
-import com.validation.annotations.FXValidation;
+import com.validation.annotations.*;
 import com.validation.display.DialogErrorDisplay;
 import com.validation.display.LabelErrorDisplay;
 import com.validation.exceptions.ValidationException;
 import com.validation.FXAbstractValidator;
+import com.validation.validator.NumberValidator;
 import com.validation.validator.RegexValidator;
 import com.validation.validator.RequiredValidator;
 import com.validation.validator.StringValidator;
@@ -35,6 +33,10 @@ public abstract class FXValidationHandler {
     }
 
     public FXValidationHandler(Class controller, Node root) {
+        initialize(controller, root);
+    }
+
+    public void initialize(Class controller, Node root) {
         this.controller = controller;
         this.root = root;
         this.mapMessage = new HashMap<>();
@@ -58,7 +60,12 @@ public abstract class FXValidationHandler {
             TextField textField = (TextField) root.lookup("#" + idNode);
             RegexValidator regexValidator = new RegexValidator();
             doValidate(regexValidator, textField, annotation, idNode, ((FXRegex) annotation).message());
-        } else if (annotation instanceof FXValidation) {
+        }else if (annotation instanceof FXNumber) {
+            TextField textField = (TextField) root.lookup("#" + idNode);
+            NumberValidator numberValidator = new NumberValidator();
+            doValidate(numberValidator, textField, annotation, idNode, ((FXNumber) annotation).message());
+        }
+        else if (annotation instanceof FXValidation) {
             TextField textField = (TextField) root.lookup("#" + idNode);
             FXAbstractValidator obj = null;
             try {

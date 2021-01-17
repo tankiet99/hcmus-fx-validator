@@ -14,7 +14,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface FXNumber {
     Class<? extends FXAbstractValidator> validation() default NumberValidator.class;
-    double min() default 0;
-    double max() default 10000;
-    String message() default "This field must not be null!";
+    double min() default Double.MIN_VALUE;
+    double max() default Double.MAX_VALUE;
+    String message() default "Number is not valid!";
 }
