@@ -17,6 +17,9 @@ import java.util.List;
 import java.util.Map;
 
 public class FXValidationHandlerWithLabel extends FXValidationHandler {
+    public FXValidationHandlerWithLabel() {
+    }
+
     public FXValidationHandlerWithLabel(Class controller, Node root) {
         super(controller, root);
     }

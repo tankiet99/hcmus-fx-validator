@@ -1,3 +1,4 @@
+com\validation\handler\FactoryHandlerProducer.class
 com\validation\display\DialogErrorDisplay.class
 com\validation\annotations\FXValidation.class
 com\validation\ValidatorFactory.class

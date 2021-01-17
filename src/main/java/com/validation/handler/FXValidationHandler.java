@@ -33,6 +33,10 @@ public abstract class FXValidationHandler {
     }
 
     public FXValidationHandler(Class controller, Node root) {
+        initialize(controller, root);
+    }
+
+    public void initialize(Class controller, Node root) {
         this.controller = controller;
         this.root = root;
         this.mapMessage = new HashMap<>();

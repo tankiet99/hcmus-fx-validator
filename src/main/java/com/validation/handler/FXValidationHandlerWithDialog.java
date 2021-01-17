@@ -17,6 +17,9 @@ import java.util.List;
 import java.util.Map;
 
 public class FXValidationHandlerWithDialog extends FXValidationHandler {
+    public FXValidationHandlerWithDialog() {
+    }
+
     public FXValidationHandlerWithDialog(Class controller, Node root) {
         super(controller, root);
     }

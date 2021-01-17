@@ -10,6 +10,7 @@ import com.validation.annotations.FXRequired;
 import com.validation.annotations.FXString;
 import com.validation.handler.FXValidationHandlerWithDialog;
 import com.validation.handler.FXValidationHandlerWithLabel;
+import com.validation.handler.FactoryHandlerProducer;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -47,9 +48,9 @@ public class FormSubmitController {
     @FXML
     private void submit() {
 //        App.setRoot("secondary");
-        FXValidationHandler handler = new FXValidationHandlerWithLabel(FormSubmitController.class, anchorPane);
+        FXValidationHandler handler = FactoryHandlerProducer.getHandler("LABEL");
+        handler.initialize(FormSubmitController.class, anchorPane);
         handler.addValidate("REQUIRED", tf1, Arrays.asList("Loi ne"));
-//        handler.addValidate("REQUIRED", tf2, Arrays.asList("Lai loi ne"));
         handler.executeValidate();
 //        Validator.valid("STRING", "dkfd", 2, 3, tf1);
 //        new DialogErrorHandler().display(new ArrayList<String>(Arrays.asList("Độ dài không hợp lệ", "Email không phù hợp")));
