@@ -10,8 +10,6 @@ import java.util.List;
 
 public class CustomValidator extends FXAbstractValidator<TextInputControl, FXValidation> {
 
-    private String message;
-
     public String getMessage() {
         return message;
     }
