@@ -2,15 +2,13 @@ package org.example;
 
 import java.util.Arrays;
 
-import com.validation.annotations.FXNumber;
-import com.validation.annotations.FXRegex;
+import com.validation.annotations.*;
 
 import com.validation.handler.FXValidationHandler;
-import com.validation.annotations.FXRequired;
-import com.validation.annotations.FXString;
 import com.validation.handler.FXValidationHandlerWithDialog;
 import com.validation.handler.FXValidationHandlerWithLabel;
 import com.validation.handler.FactoryHandlerProducer;
+import com.validation.validator.CustomValidator;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -26,11 +24,13 @@ public class FormSubmitController {
     public Button primaryButton;
 
     @FXML
+
     TextField tf1;
 
     @FXML
 //    @FXRequired(message = "required field!")
-    @FXNumber(min = 10,max = 100)
+    //@FXNumber(min = 10,max = 100)
+    @FXValidation(validation = CustomValidator.class, message = "k dc")
     TextField tf2;
 
     @FXML
@@ -50,7 +50,7 @@ public class FormSubmitController {
 //        App.setRoot("secondary");
         FXValidationHandler handler = FactoryHandlerProducer.getHandler("LABEL");
         handler.initialize(FormSubmitController.class, anchorPane);
-        handler.addValidate("REQUIRED", tf1, Arrays.asList("Loi ne"));
+        handler.addValidate("REQUIRED", tf1, Arrays.asList("Invalid"));
         handler.executeValidate();
 //        Validator.valid("STRING", "dkfd", 2, 3, tf1);
 //        new DialogErrorHandler().display(new ArrayList<String>(Arrays.asList("Độ dài không hợp lệ", "Email không phù hợp")));

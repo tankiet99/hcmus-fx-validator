@@ -18,6 +18,9 @@ public class CustomValidator extends FXAbstractValidator<TextInputControl, FXVal
         this.message = message;
     }
 
+    public CustomValidator() {
+        super();
+    }
     public CustomValidator(TextInputControl control, FXValidation annotation) {
         super(control, annotation);
     }
@@ -45,7 +48,7 @@ public class CustomValidator extends FXAbstractValidator<TextInputControl, FXVal
         }
         this.isValid.set(validString.contains(control.getText()));
         if(!this.isValid.get()) {
-            throw new ValidationException(annotation.message());
+            throw new ValidationException(this.message);
         }
     }
 }
