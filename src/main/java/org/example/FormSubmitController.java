@@ -7,6 +7,8 @@ import com.validation.annotations.*;
 import com.validation.handler.FXValidationHandler;
 import com.validation.handler.FXValidationHandlerWithDialog;
 import com.validation.handler.FXValidationHandlerWithLabel;
+import com.validation.handler.FactoryHandlerProducer;
+import com.validation.validator.CustomValidator;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -22,12 +24,22 @@ public class FormSubmitController {
     public Button primaryButton;
 
     @FXML
+<<<<<<< HEAD
     @FXRequired(message = "required field!")
     @FXInteger(min = 3, max = 30,message = "khong phai interger!")
     TextField tf1;
 
     @FXML
     @FXNumber(min = 10,max = 100)
+=======
+
+    TextField tf1;
+
+    @FXML
+//    @FXRequired(message = "required field!")
+    //@FXNumber(min = 10,max = 100)
+    @FXValidation(validation = CustomValidator.class, message = "k dc")
+>>>>>>> 0ccd3d4b7f9eaf863e14eab9de67ed202897856d
     TextField tf2;
 
     @FXML
@@ -45,9 +57,15 @@ public class FormSubmitController {
     @FXML
     private void submit() {
 //        App.setRoot("secondary");
+<<<<<<< HEAD
         FXValidationHandler handler = new FXValidationHandlerWithLabel(FormSubmitController.class, anchorPane);
 //        handler.addValidate("REQUIRED", tf1, Arrays.asList("Loi ne"));
 //        handler.addValidate("REQUIRED", tf2, Arrays.asList("Lai loi ne"));
+=======
+        FXValidationHandler handler = FactoryHandlerProducer.getHandler("LABEL");
+        handler.initialize(FormSubmitController.class, anchorPane);
+        handler.addValidate("REQUIRED", tf1, Arrays.asList("Invalid"));
+>>>>>>> 0ccd3d4b7f9eaf863e14eab9de67ed202897856d
         handler.executeValidate();
 //        Validator.valid("STRING", "dkfd", 2, 3, tf1);
 //        new DialogErrorHandler().display(new ArrayList<String>(Arrays.asList("Độ dài không hợp lệ", "Email không phù hợp")));

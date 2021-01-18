@@ -10,6 +10,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface FXValidation {
     public Class <? extends FXAbstractValidator> validation();
-    public Class <? extends Control>[] applicableFor() default {};
+    /* public Class <? extends Control>[] applicableFor() default {}; */
     public String message() default "Validation failed!";
 }

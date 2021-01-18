@@ -12,7 +12,6 @@ public class NumberValidator extends FXAbstractValidator<TextInputControl, FXNum
 
     private Double min;
     private Double max;
-    private String stringMessage;
 
     public Double getMin() {
         return min;
@@ -30,18 +29,18 @@ public class NumberValidator extends FXAbstractValidator<TextInputControl, FXNum
         this.max = max;
     }
 
-    public String getStringMessage() {
-        return stringMessage;
+    public String getMessage() {
+        return message;
     }
 
-    public void setStringMessage(String stringMessage) {
-        this.stringMessage = stringMessage;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public NumberValidator(Double min, Double max, String stringMessage) {
         this.min = min;
         this.max = max;
-        this.stringMessage = stringMessage;
+        this.message = stringMessage;
     }
 
     public NumberValidator(TextInputControl control, FXNumber annotation) {
@@ -52,7 +51,7 @@ public class NumberValidator extends FXAbstractValidator<TextInputControl, FXNum
     public void validate(TextInputControl control, FXNumber annotation) throws ValidationException {
         setMax(annotation.max());
         setMin(annotation.min());
-        setStringMessage(annotation.message());
+        setMessage(annotation.message());
         this.validate(control);
     }
 
