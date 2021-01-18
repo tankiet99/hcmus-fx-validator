@@ -23,33 +23,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="531440db-bdb2-4e2e-865a-70d63db16179" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/validation/annotations/FXInteger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/validation/validator/IntegerValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/validation/annotations/FXNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/validation/annotations/FXNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/validation/FXAbstractValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/validation/FXAbstractValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/validation/ValidatorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/validation/ValidatorFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/validation/annotations/FXRegex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/validation/annotations/FXRegex.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/validation/handler/FXValidationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/validation/handler/FXValidationHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/validation/validator/NumberValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/validation/validator/NumberValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/validation/validator/RegexValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/validation/validator/RegexValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FormSubmitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FormSubmitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/primary.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/validation/FXAbstractValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/FXAbstractValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/ValidatorContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/ValidatorContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/validation/ValidatorFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/ValidatorFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/validation/annotations/FXNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/annotations/FXNumber.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/validation/annotations/FXRegex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/annotations/FXRegex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/annotations/FXRequired.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/annotations/FXRequired.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/annotations/FXString.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/annotations/FXString.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/annotations/FXValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/annotations/FXValidation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/display/DialogErrorDisplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/display/DialogErrorDisplay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/display/LabelErrorDisplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/display/LabelErrorDisplay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/exceptions/FXValidatorException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/exceptions/FXValidatorException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/exceptions/ValidationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/exceptions/ValidationException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/validation/handler/FXValidationHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/handler/FXValidationHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/validator/CustomValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/validator/CustomValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/validator/NumberValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/validator/NumberValidator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/validation/validator/RegexValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/validator/RegexValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/validator/RequiredValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/validator/RequiredValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/validation/validator/StringValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/validation/validator/StringValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/App.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/FormSubmitController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/FormSubmitController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/SecondaryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/SecondaryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/primary.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
@@ -62,6 +53,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -139,6 +131,13 @@
       <workItem from="1608989280019" duration="6651000" />
       <workItem from="1609045509432" duration="6604000" />
       <workItem from="1609921835238" duration="65000" />
+      <workItem from="1610809482458" duration="4591000" />
+      <workItem from="1610818340765" duration="413000" />
+      <workItem from="1610818781957" duration="576000" />
+      <workItem from="1610878705590" duration="1359000" />
+      <workItem from="1610880968687" duration="24000" />
+      <workItem from="1610881227552" duration="3869000" />
+      <workItem from="1610974010340" duration="1735000" />
     </task>
     <servers />
   </component>

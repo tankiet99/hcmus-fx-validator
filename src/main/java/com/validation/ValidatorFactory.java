@@ -22,6 +22,9 @@ public class ValidatorFactory {
             if (validatorType.equals("NUMBER")) {
                 return new NumberValidator(Double.parseDouble(args.get(0)), Double.parseDouble(args.get(1)), args.get(2));
             }
+            if (validatorType.equals("INTEGER")) {
+                return new IntegerValidator(Integer.parseInt(args.get(0)), Integer.parseInt(args.get(1)), args.get(2));
+            }
             return null;
         } catch (Exception e) {
             e.printStackTrace();

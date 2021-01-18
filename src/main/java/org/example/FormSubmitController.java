@@ -2,12 +2,9 @@ package org.example;
 
 import java.util.Arrays;
 
-import com.validation.annotations.FXNumber;
-import com.validation.annotations.FXRegex;
+import com.validation.annotations.*;
 
 import com.validation.handler.FXValidationHandler;
-import com.validation.annotations.FXRequired;
-import com.validation.annotations.FXString;
 import com.validation.handler.FXValidationHandlerWithDialog;
 import com.validation.handler.FXValidationHandlerWithLabel;
 import javafx.fxml.FXML;
@@ -25,20 +22,21 @@ public class FormSubmitController {
     public Button primaryButton;
 
     @FXML
+    @FXRequired(message = "required field!")
+    @FXInteger(min = 3, max = 30,message = "khong phai interger!")
     TextField tf1;
 
     @FXML
-//    @FXRequired(message = "required field!")
     @FXNumber(min = 10,max = 100)
     TextField tf2;
 
     @FXML
-    @FXRequired(message = "field is required!")
     @FXString(max = 10, min = 5, message = "độ dài filed không hợp lệ")
     TextField tf3;
 
     @FXML
     @FXRegex(regex = "^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$")
+    @FXRequired(message = "required field!")
     TextField tf4;
 
     @FXML
@@ -48,7 +46,7 @@ public class FormSubmitController {
     private void submit() {
 //        App.setRoot("secondary");
         FXValidationHandler handler = new FXValidationHandlerWithLabel(FormSubmitController.class, anchorPane);
-        handler.addValidate("REQUIRED", tf1, Arrays.asList("Loi ne"));
+//        handler.addValidate("REQUIRED", tf1, Arrays.asList("Loi ne"));
 //        handler.addValidate("REQUIRED", tf2, Arrays.asList("Lai loi ne"));
         handler.executeValidate();
 //        Validator.valid("STRING", "dkfd", 2, 3, tf1);

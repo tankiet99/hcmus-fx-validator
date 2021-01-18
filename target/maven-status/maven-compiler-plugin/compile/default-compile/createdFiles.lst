@@ -1,4 +1,5 @@
 com\validation\display\DialogErrorDisplay.class
+com\validation\annotations\FXInteger.class
 com\validation\annotations\FXValidation.class
 com\validation\ValidatorFactory.class
 com\validation\annotations\FXString.class
@@ -13,6 +14,8 @@ com\validation\annotations\FXNumber.class
 com\validation\annotations\FXRequired.class
 com\validation\validator\NumberValidator.class
 com\validation\FXAbstractValidator.class
+com\validation\annotations\FXRegex.class
+com\validation\validator\IntegerValidator.class
 com\validation\exceptions\ValidationException.class
 org\example\FormSubmitController.class
 com\validation\handler\FXValidationHandler.class

@@ -1,15 +1,13 @@
 package com.validation.handler;
 
-import com.validation.*;
+import com.validation.validator.*;
 import com.validation.annotations.*;
 import com.validation.display.DialogErrorDisplay;
 import com.validation.display.LabelErrorDisplay;
 import com.validation.exceptions.ValidationException;
 import com.validation.FXAbstractValidator;
-import com.validation.validator.NumberValidator;
 import com.validation.validator.RegexValidator;
-import com.validation.validator.RequiredValidator;
-import com.validation.validator.StringValidator;
+
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.TextField;
@@ -60,6 +58,10 @@ public abstract class FXValidationHandler {
             TextField textField = (TextField) root.lookup("#" + idNode);
             NumberValidator numberValidator = new NumberValidator();
             doValidate(numberValidator, textField, annotation, idNode, ((FXNumber) annotation).message());
+        }else if (annotation instanceof FXInteger) {
+            TextField textField = (TextField) root.lookup("#" + idNode);
+            IntegerValidator numberValidator = new IntegerValidator();
+            doValidate(numberValidator, textField, annotation, idNode, ((FXInteger) annotation).message());
         }
         else if (annotation instanceof FXValidation) {
             TextField textField = (TextField) root.lookup("#" + idNode);

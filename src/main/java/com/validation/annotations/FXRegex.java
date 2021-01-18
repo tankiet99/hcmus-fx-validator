@@ -10,6 +10,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface FXRegex {
     public Class<? extends FXAbstractValidator> validation() default RegexValidator.class;
-    String regex();
+    String regex() default "";
     String message() default "Regex not valid!";
 }

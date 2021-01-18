@@ -8,13 +8,17 @@ import javafx.scene.control.TextInputControl;
 import java.util.regex.Pattern;
 
 public class RegexValidator extends FXAbstractValidator<TextInputControl, FXRegex> {
-    private String regex;
+    private String regex="";
     public RegexValidator() {
+        super();
     }
 
     public RegexValidator(String regex, String message) {
         this.regex = regex;
         this.message = message;
+    }
+    public RegexValidator(String regex) {
+        this.regex = regex;
     }
 
     public String getRegex() {

@@ -25,7 +25,7 @@ public abstract class FXAbstractValidator<T extends Control, A extends Annotatio
     protected final BooleanProperty isValid = new SimpleBooleanProperty(false);
 
     public FXAbstractValidator() {
-        // nothing to do
+        this.message="error";
     }
 
     public FXAbstractValidator(T control, A annotation) {
